@@ -1,4 +1,4 @@
 szfgy1
 ======
 
-Szoftver folyamat gyak 1 projekt
+Szoftverfolyamat gyak 1 projekt
