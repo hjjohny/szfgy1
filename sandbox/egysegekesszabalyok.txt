@@ -1,0 +1,165 @@
+﻿Fajok és egységek statokkal:
+
+TODO:
+	- fenntartás, ár és védő érték balanszolás ( a többit megcsináltam )
+
+
+Általános szabályok:
+
+-falvakat kell foglalni a pénzért és tartani kell őket
+-van egy kezdő terület ahova érkeznek az új egységek
+-az egyégek feljődnek, ha szintet lép egy egység bonusz statokat kap minden szint után. ( max lvl: 3 )
+-többféle terep van különböző tulajdonságokkal:
+	mező (zöld): 50% os védő érték , 1 pont a lépés
+	hegy (szürke) 70% os védés , 2 pont a lépés
+	erdő (sötét zöld) 60% védés, 1 pont a lépés
+	víz(kék) 40% a védés, 2 pont a lépés
+	...
+-opcionális: a védő érték jobb lenne egység és terep alapján, nem csak terep alapján
+-ha egy egység támadot/gyógyított már nem léphet
+
+
+Emberek:
+Faj bónuszok és hátrányok:
+Az ember mindenben átlagos nincs se előnye se hátránya 
+
+	Egység típusok:
+	
+		Támadó:
+			Egység neve: Kardos
+			Sebzés: 7  (+3)
+			Távolság: 1
+			Élet: 30 (+6)
+			Védő érték: 50%
+			Ár: 18
+			Fenntartás: 1
+			Mozgáspont: 4
+
+		Védő
+			Egység neve: Számszeríjász
+			Sebzés: 5 (+2)
+			Távolság: 4
+			Élet: 20 (+5)
+			Védő érték: 50%
+			Ár: 16
+			Fenntartás: 1 
+			Mozgáspont: 5
+			
+		Támogató
+			Egység neve: Pap
+			Sebzés: 3 (+1)
+			Gyógyító érték: 5 (+3)
+			Távolság: 1/2
+			Élet: 15 (+3)
+			Védő érték: 50%
+			Ár: 12
+			Fenntartás: 1
+			Mozgáspont: 5
+			
+		Felderítő
+			Egység neve: Huszár
+			Sebzés: 5 (+2)
+			Távolság: 2
+			Élet: 25 (+3)
+			Védő érték: 40%
+			Ár: 17
+			Fenntartás: 1
+			Mozgáspont: 7
+			
+
+Elfek:
+Faj bónuszok és hátrányok:
+kisebb a közelharci sebzésük, de jobb az íjászuk és a felderítő
+ íjász és gyorsabbak mint az átlag (és jól védekeznek valamint erdőben gyorsabbak).
+
+	Egység típusok:
+	
+		Támadó:
+			Egység neve: Ranger
+			Sebzés: 6  (+2)
+			Távolság: 1
+			Élet: 27 (+5)
+			Védő érték: 50%
+			Ár: 15
+			Fenntartás: 1
+			Mozgáspont: 5
+
+		Védő
+			Egység neve: Ijász
+			Sebzés: 7 (+4)
+			Távolság: 5
+			Élet: 18 (+4)
+			Védő érték: 50%
+			Ár: 15
+			Fenntartás: 1 
+			Mozgáspont: 6
+			
+		Támogató
+			Egység neve: Druida
+			Sebzés: 2 (+1)
+			Gyógyító érték: 7 (+3)
+			Távolság: 1/2
+			Élet: 15 (+4)
+			Védő érték: 50%
+			Ár: 20
+			Fenntartás: 2
+			Mozgáspont: 6
+			
+		Felderítő
+			Egység neve: Hírnök
+			Sebzés: 4 (+2)
+			Távolság: 3
+			Élet: 22 (+3)
+			Védő érték: 40%
+			Ár: 25
+			Fenntartás: 2
+			Mozgáspont: 8
+			
+Orkok:
+Faj bónuszok és hátrányok:
+Ezek állatok, ezért nagyon dúrvák a közelharcosok és sok a hp-juk,
+de cserébe szarabbul íjászkodnak és gyógyítanak, ( valamint utálnak
+fűrdeni uh vízben szarul védekeznek és lassan haladnak. )
+
+	Egység típusok:
+	
+		Támadó:
+			Egység neve: Bunkós
+			Sebzés: 8 (+4)
+			Távolság: 2
+			Élet: 38 (+8)
+			Védő érték: 50%
+			Ár: 18
+			Fenntartás: 1
+			Mozgáspont: 4
+
+		Védő
+			Egység neve: Lánzsás goblin
+			Sebzés: 3 (+2)
+			Távolság: 3
+			Élet: 25 (+6)
+			Védő érték: 50%
+			Ár: 16
+			Fenntartás: 1 
+			Mozgáspont: 5
+			
+		Támogató
+			Egység neve: Pap
+			Sebzés: 5 (+1)
+			Gyógyító érték: 4 (+1)
+			Távolság: 1/2
+			Élet: 15 (+4)
+			Védő érték: 50%
+			Ár: 12
+			Fenntartás: 1
+			Mozgáspont: 5
+			
+		Felderítő
+			Egység neve: Farkas lovas
+			Sebzés: 7 (+3)
+			Távolság: 1
+			Élet: 28 (+4)
+			Védő érték: 40%
+			Ár: 17
+			Fenntartás: 1
+			Mozgáspont: 6
