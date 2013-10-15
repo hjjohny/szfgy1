@@ -1,0 +1,122 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage{t1enc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{couriers}
+\lstset{language=c++,
+basicstyle=\footnotesize\ttfamily,
+stepnumber=1,
+firstnumber=0,
+numbersep=5pt,
+numbers=left,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+tabsize=3,
+breaklines=true,
+breakatwhitespace=false,
+float,
+frame=linesc,
+%keywordstyle=\color{blue}
+keywordstyle=\bfseries
+}
+
+\definecolor{bground}{rgb}{0.92,0.92,0.92}
+
+\newcommand{\pelda}[6]{%
+\begin{figure}[ht!]
+\centering
+\framebox{%
+\colorbox{bground}{%
+\begin{minipage}{#1}%
+\end{minipage}%
+}%
+}%
+\label{#6}
+\caption{#5}
+\end{figure}
+}
+
+\newcommand{\lexelements}[2]{%
+\null\smallskip
+\framebox{%
+\colorbox{bground}{%
+\begin{minipage}{0.9\textwidth}%
+\textbf{#1} \\%
+\null\\%
+\begin{footnotesize}
+#2%
+\end{footnotesize}
+\end{minipage}%
+}%
+}%
+}
+
+
+\setlength{\textwidth}{140mm}
+\setlength{\textheight}{237mm}
+\usepackage[top=30mm, bottom=30mm, left=40mm, right=30mm]{geometry}
+\usepackage{setspace}
+
+
+\sloppy
+\linespread{1.3}
+
+% Title Page
+\title{Dokumentáció}
+\author{Bodor Zoltán, Hack János, Nagy Márton, Pető Bence}
+
+\begin{document}
+\maketitle
+
+%\input{cimlap.tex}
+
+\tableofcontents
+
+\chapter{Követelmény Feltárás}
+
+\section{Célkitűzés, projektindító dokumentum}
+
+\section{Szakterületi fogalomjegyzék}
+
+\begin{itemize}
+\item {\bf Hotseat}:
+\item {\bf Race}:
+\item {\bf Lader}:
+\end{itemize}
+
+\section{Használatieset-modell, funkcionális követelmények}
+
+A Szoftver alapvető célja a játék. A Játék alapértelmezett eseben egy számítógép előtt ülő két emberek között zajlik. A játékosok választhatnak maguknak nevet a játék megkezdése előtt,
+ha nem választanának a játék az alapértelmezett neveket használja majd (Player1, Player2), amivel később a játékban hivatkozunk rájuk. A játékosok a nevük megválasztása után választhatnak az előre elkészített pályák közül, valamint random is generáltathatnak pályát, amin játszani fognak. A pálya kiválasztása után minden játékosnak
+lehetősége nyilik a játszani kívánt faj kiválasztására. Ezután megkezdődhet a játék.
+
+A felhasználó továbbá extra featureként szívessen látná a következő dolgokat:
+\begin{itemize}
+\item Saját pályák készítésének lehetősége.
+\item A megkezdett játékok elmentése, valamint visszatöltése.
+\item Játékos ranglétra, amin a legjobb 10 játékos látszik elért pont alapján.
+\item Csata közbeni súgó, amin meg tudja nézni agy egységek részletes leírását és a részletes játék szabályokat.
+\item Játék gépi játékos ellen, valamint 2 vs 2, hogy több ismerősével is játszhasson.
+\end{itemize} 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{UseCaseModel.png}
+\caption{Használatieset-modelll}
+\label{fig:hmm}
+\end{figure}
+
+\section{Szakterületi követelmények}
+
+\section{Nem funkcionális követelmények}
+
+\end{document} 
