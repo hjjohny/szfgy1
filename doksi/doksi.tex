@@ -83,14 +83,28 @@ keywordstyle=\bfseries
 
 \chapter{Követelmény Feltárás}
 
+a fajok részletes leíását tartalamző txt tartalam valahova sztem ide kell de nem tudom pontossan hova ....
+
 \section{Célkitűzés, projektindító dokumentum}
+
+A szoftver egy egy számítógépnél játszható körökre osztott startégiai játék lesz. A megrendelő elvárja a játéktól, hogy több ember, legalább kettő, képes legyen egymás ellen játszani. A felhasználó
+szeretne a játékban a saját választott nevével játszani. A játék egy pályán játszódik, ahol a játékosok különböző egységekkel rendelkeznek. A játék célja a másik játékos egységeinek legyőzése, vagy a pályán megtalálható pénzbeviteli források teljes uralma.
+A megrendelő további az alap játékon túli feature-öket is szívessen látna az ídő és erőforrás mennyiségétől függően. Ezek a következőek lennének:
+\begin{itemize}
+\item Saját pályák készítésének lehetősége.
+\item A megkezdett játékok elmentése, valamint visszatöltése.
+\item Játékos ranglétra, amin a legjobb 10 játékos látszik elért pont alapján.
+\item Csata közbeni súgó, amin meg tudja nézni agy egységek részletes leírását és a részletes játék szabályokat.
+\item Játék gépi játékos ellen, valamint 2 vs 2, hogy több ismerősével is játszhasson.
+\end{itemize} 
 
 \section{Szakterületi fogalomjegyzék}
 
 \begin{itemize}
-\item {\bf Hotseat}:
-\item {\bf Race}:
-\item {\bf Lader}:
+\item {\bf Hotseat}: Egy számítógép előtti, egy billenytűzettel és egérrel játszható, többjátékos mód.
+\item {\bf Race}: A játékban használható fajok.
+\item {\bf Lader}: A játékos ranglétra, itt szerepelnek a legjobb játékosok.
+\item {\bf Körökre osztott stratégia}: A játék körökből áll, egy kör egy játékos összes lépését jelenti a tovább adásig a másik játékosnak.
 \end{itemize}
 
 \section{Használatieset-modell, funkcionális követelmények}
