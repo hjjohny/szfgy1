@@ -87,7 +87,7 @@ a fajok részletes leíását tartalamző txt tartalam valahova sztem ide kell d
 
 \section{Célkitűzés, projektindító dokumentum}
 
-A felhasználó szeretné ha a program egy grafikus alkalmazás lenne amit windowson lehet futattni. A szoftver egy egy számítógépnél játszható körökre osztott startégiai játék lesz. A megrendelő elvárja a játéktól, hogy több ember, legalább kettő, képes legyen egymás ellen játszani. A felhasználó
+A szoftver egy egy számítógépnél játszható körökre osztott startégiai játék lesz. A megrendelő elvárja a játéktól, hogy több ember, legalább kettő, képes legyen egymás ellen játszani. A felhasználó
 szeretne a játékban a saját választott nevével játszani. A játék egy pályán játszódik, ahol a játékosok különböző egységekkel rendelkeznek. A játék célja a másik játékos egységeinek legyőzése, vagy a pályán megtalálható pénzbeviteli források teljes uralma.
 A megrendelő további az alap játékon túli feature-öket is szívessen látna az ídő és erőforrás mennyiségétől függően. Ezek a következőek lennének:
 \begin{itemize}
@@ -125,12 +125,66 @@ A felhasználó továbbá extra featureként szívessen látná a következő do
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{UseCaseModel.png}
-\caption{Használatieset-modelll}
+\caption{Használatieset-modell}
 \label{fig:hmm}
 \end{figure}
 
 \section{Szakterületi követelmények}
 
 \section{Nem funkcionális követelmények}
+
+\chapter{Tervezés}
+
+\section{Program architecturája}
+
+A program három fő komponensből tevődik össze melyek az MVVM (Model-View-ViewModel) minta alap elemei. A kapcsolatok az egyes komponensek között a tervmintának megfelelően a következőek:
+\begin{itemize}
+\item {\bf Model}: Az üzleti logika ebben a komponesben található. Ide kerül minden a játék logikai működéséért felelős osztály.
+\item {\bf View}: Minden a megjelenítéssel kapcsolatos osztály, a különböző megjelenítendő sémák osztályai.
+\item {\bf ViewModel}: A View és Model komponest köti össze, az ide tartozó osztályok felelősek a két téteg együttműködésért, semilyen számítást végző osztályt vagy felületi elemet nem tartalmazhat.
+\end{itemize}
+ 
+\section{Osztálymodell}
+
+\subsection{View}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{ViewClass.png}
+\caption{View Osztály Diagram}
+\label{fig:vc}
+\end{figure}
+
+\subsection{Model}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{ModelClass.png}
+\caption{Model Osztály Diagram}
+\label{fig:mc}
+\end{figure}
+
+\subsection{ViewModel}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{ViewModelClass.png}
+\caption{ViewModel Osztály Diagraml}
+\label{fig:vmc}
+\end{figure}
+
+\section{Dinamkus működés}
+
+\section{Felhasználó-felület modell}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{ViewScreen.png}
+\caption{Felület Tervek}
+\label{fig:vs}
+\end{figure}
+
+\section{Részletes programterv}
+
 
 \end{document} 
