@@ -154,22 +154,32 @@ A program három fő komponensből tevődik össze melyek az MVVM (Model-View-Vi
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{ViewClass.png}
-\caption{View Osztály Diagram}
+\caption{View Osztálydiagram}
 \label{fig:vc}
 \end{figure}
 
 \subsection{Model}
 
+A Model névtér tartalmazza a játék logikájához szükséges osztályokat. Itt tároljuk az aktuális játékállást, a térképet, a játékosok egységeit stb.
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{ModelClass.png}
-\caption{Model Osztály Diagram}
+\caption{Model Osztálydiagram}
 \label{fig:mc}
 \end{figure}
 
-A Model végzi a játék működéséhez elengedhetetlen számításokat. A View-val a ViewModelen keresztül áll kapcsolatban, tőle kapja az üzeneteket, a View a ViewModelen keresztül kérdezi le a játék állását.
+\subsubsection{Unit}
+A Unit osztály írja le az egységeket. Az egység három különböző faj lehet, mindegyik három szintű lehet. A Unit osztályból mindig az összes létező egység számával megegyező példány létezik. Feladata egy adott egység tulajdonságainak tárolása.
 
-\subsubsection{``Game'' osztály}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{Unit.png}
+\caption{Unit osztály}
+\label{fig:unitclass}
+\end{figure}
+
+\subsubsection{Game}
 A Game osztályhoz fut be minden kérés, ő a Model lelke, ellenőrzi a kívánt műveletek (lépések stb.) érvényességét, frissíti a térképen lévő egységeket, mezőket, magát a térképet, amely változtatásokról a View értesül.
 
 Képes a játék állásának minden összetevőjét közvetlenül vagy közvetetten elérni, bizonyos dolgokat önmaga is tárol a játékállásról.
@@ -198,7 +208,7 @@ Metódusai:
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{ViewModelClass.png}
-\caption{ViewModel Osztály Diagraml}
+\caption{ViewModel Osztálydiagram}
 \label{fig:vmc}
 \end{figure}
 
