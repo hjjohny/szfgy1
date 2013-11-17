@@ -132,6 +132,9 @@ A felhasználó továbbá extra featureként szívessen látná a következő do
 \section{Szakterületi követelmények}
 
 \section{Nem funkcionális követelmények}
+\begin{itemize}
+\item A játék legyen könnyen átlátható, és használata a gyorsan tanulható.
+\end{itemize} 
 
 \chapter{Tervezés}
 
@@ -139,7 +142,7 @@ A felhasználó továbbá extra featureként szívessen látná a következő do
 
 A program három fő komponensből tevődik össze melyek az MVVM (Model-View-ViewModel) minta alap elemei. A kapcsolatok az egyes komponensek között a tervmintának megfelelően a következőek:
 \begin{itemize}
-\item {\bf Model}: Az üzleti logika ebben a komponesben található. Ide kerül minden a játék logikai működéséért felelős osztály.
+\item {\bf Model}: Az üzleti logika – a játék eseményeinek kezelése, számítások stb. – ebben a komponesben található. Ide kerül minden a játék logikai működéséért felelős osztály.
 \item {\bf View}: Minden a megjelenítéssel kapcsolatos osztály, a különböző megjelenítendő sémák osztályai.
 \item {\bf ViewModel}: A View és Model komponest köti össze, az ide tartozó osztályok felelősek a két téteg együttműködésért, semilyen számítást végző osztályt vagy felületi elemet nem tartalmazhat.
 \end{itemize}
@@ -163,6 +166,32 @@ A program három fő komponensből tevődik össze melyek az MVVM (Model-View-Vi
 \caption{Model Osztály Diagram}
 \label{fig:mc}
 \end{figure}
+
+A Model végzi a játék működéséhez elengedhetetlen számításokat. A View-val a ViewModelen keresztül áll kapcsolatban, tőle kapja az üzeneteket, a View a ViewModelen keresztül kérdezi le a játék állását.
+
+\subsubsection{``Game'' osztály}
+A Game osztályhoz fut be minden kérés, ő a Model lelke, ellenőrzi a kívánt műveletek (lépések stb.) érvényességét, frissíti a térképen lévő egységeket, mezőket, magát a térképet, amely változtatásokról a View értesül.
+
+Képes a játék állásának minden összetevőjét közvetlenül vagy közvetetten elérni, bizonyos dolgokat önmaga is tárol a játékállásról.
+
+Adattagjai:
+\begin{itemize}
+\item \textit{currentPlayer}: A játékban soron lévő játékos. A jelenlegi játékállásban a következő lépés csak számára engedélyezett; ha más próbál lépni, az nem megengedett művelet.
+\item \textit{mapHandler}: A Game ezen az osztályon keresztül lép kapcsolatba a térképpel, hiszen ő felelős a térkép kezeléséért: generálás, mentés, betöltés.
+\item \textit{players}: A játékosok listája. A Game őket arra használja, hogy pl. az adott lépést képes-e a játékos a meglévő pénzével, fajával stb. megtenni. A Game rajta keresztül látja a Unitokat is.
+\item \textit{resourceHandler}: A Game ezt az osztályt használja a bináris adatok, és az adatbázisban tárolt adatok betöltésére.
+\item \textit{turn}: A jelenlegi kör száma.
+\end{itemize}
+
+Metódusai:
+\begin{itemize}
+\item \textit{gameFunction()}: ???
+\item \textit{gameOver()}: A játék végén hívódik meg, durván egy logikai destruktornak is tekinthető. Elvégzi a játék végén fontos teendőket; pl. frissíti a Lader-t, felszabadítja az erőforrásokat stb.
+\item \textit{loadGame()}: Betölt egy korábban elmentett játékállást. Létrehozza a szükséges objektumokat, beállítja az értéküket, a MapHandler-rel legeneráltatja a térképet stb.
+\item \textit{moveUnit()}: ???
+\item \textit{newGame()}: A játék elején hívódik meg, durván egy logikai konstruktornak is tekinthető. Létrehozza a játék elején szükséges objektumokat, beállítja a játékosok, egységek stb. alapértelmezett értékeit.
+\item \textit{saveGame()}: Menti a jelenlegi játékállást úgy, hogy később betölthető legyen, ld. loadGame().
+\end{itemize}
 
 \subsection{ViewModel}
 
