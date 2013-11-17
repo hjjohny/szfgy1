@@ -151,17 +151,29 @@ A program három fő komponensből tevődik össze melyek az MVVM (Model-View-Vi
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{ViewClass.png}
-\caption{View Osztály Diagram}
+\caption{View Osztálydiagram}
 \label{fig:vc}
 \end{figure}
 
 \subsection{Model}
 
+A Model névtér tartalmazza a játék logikájához szükséges osztályokat. Itt tároljuk az aktuális játékállást, a térképet, a játékosok egységeit stb.
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{ModelClass.png}
-\caption{Model Osztály Diagram}
+\caption{Model Osztálydiagram}
 \label{fig:mc}
+\end{figure}
+
+\subsubsection{Unit}
+A Unit osztály írja le az egységeket. Az egység három különböző faj lehet, mindegyik három szintű lehet. A Unit osztályból mindig az összes létező egység számával megegyező példány létezik. Feladata egy adott egység tulajdonságainak tárolása.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{Unit.png}
+\caption{Unit osztály}
+\label{fig:unitclass}
 \end{figure}
 
 \subsection{ViewModel}
@@ -169,7 +181,7 @@ A program három fő komponensből tevődik össze melyek az MVVM (Model-View-Vi
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{ViewModelClass.png}
-\caption{ViewModel Osztály Diagraml}
+\caption{ViewModel Osztálydiagram}
 \label{fig:vmc}
 \end{figure}
 
