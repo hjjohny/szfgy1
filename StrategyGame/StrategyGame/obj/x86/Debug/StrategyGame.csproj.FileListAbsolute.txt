@@ -24,3 +24,16 @@ C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\S
 C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.Properties.Resources.resources
 C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\GenerateResource.write.1.tlog
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.exe
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.pdb
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\bin\Debug\StrategyGame.exe
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\bin\Debug\StrategyGame.pdb
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\ResolveAssemblyReference.cache
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\View\MainWindow.baml
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\View\MainWindow.g.cs
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\App.g.cs
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame_MarkupCompile.cache
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.g.resources
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.Properties.Resources.resources
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\GenerateResource.read.1.tlog
+f:\!!!!!Egyetem\!!!!!!!!!!!!!!!!!!!!!Msc\szoftverfolyamat1\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\GenerateResource.write.1.tlog
