@@ -1,0 +1,28 @@
+Program mõködés:
+
+view, ViewModel:
+
+Lesz egy fõ ablak a mainwindow és ezen fogom cserélgetni a user controlokat amik a különbözõ nézetek lesznek (menü, lader, játék)
+Miden nézet hozáá lesz kötve a viewModelhez (még nem tudom hogy részekre bontom-e vagy lesz egy és azon belül alosztályok és egyhez kötök csak )
+Ha interakció történik a a contorlon akkor azt kezeli a viewModel megfelelõ eventHandlere és meghívódik a szükséges Model funkció ami számol.
+a viewModel és a view pontos együtt mûködését még tanulmányoznom kell és implementálni a részleteket (hétvége)
+
+Model:
+
+Ez a rész gyakorlatilag egy kiszolgáló, egyetlen példány létezik belõle (singleton), miden adatbázis kérés vagy háttér adat módosítás itt történik,
+ezért van itt majdnem minden. Van néhány funkció ami vissza ad értéket a viewModelnek a többi csak frissíti az adatagokat amik hozzá vannak kötve
+a viewModelen kereszül a viewhoz és ha frissülnek szólok a viewnak és mindent lefrissít a változtatásoknak megfelelõen.
+
+Játékmenet:
+
+A játék két ember közt zajlik körökre osztva. Ha az egyik végzett átadja a körét és a másik jön. Minden játékos 3 dolgot csinálhat a körében: 
+-vásárolhat új egységet a pénzébõl ami egy a map speciális részén az õ kezdõ területén jelenik meg. Ez az egység még nem léphet mivel most jött
+csak a köv körbe lehet kezelni.
+-mozgathatja az egységeit ezzel foglalva falvat, vagy csak mozogva. Ha valaki falvat foglal az egyég 2 mozgáspontot veszít, de mozodgat tovább ha tud,
+ha egy egység harcol, akkor az összes mozgáspontja 0-a lesz már nem mozoghat tovább.
+-tovább adhatja a kört.
+
+Cél: kinyírni az ellenség össze egységét
+(további játék mód, ha nem elég neki ez:
+-elfoglalni az összes várost és X körig megtartani
+)  
