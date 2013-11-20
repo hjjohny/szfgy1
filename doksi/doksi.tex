@@ -162,6 +162,8 @@ A program három fő komponensből tevődik össze melyek az MVVM (Model-View-Vi
 
 A Model névtér tartalmazza a játék logikájához szükséges osztályokat. Itt tároljuk az aktuális játékállást, a térképet, a játékosok egységeit stb.
 
+Gyakorlatilag egy kiszolgáló, egyetlen példány létezik belőle (singleton), minden adatbáziskérés vagy háttéradat-módosítás itt történik. Van néhány funkció, ami visszaad értéket a ViewModelnek, a többi csak frissíti az adatagokat amik hozzá vannak kötve a ViewModelen kereszül a Viewhoz, és ha frissülnek szól a Viewnak, ami mindent lefrissít a változtatásoknak megfelelően.
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1\textwidth]{ModelClass.png}
@@ -195,12 +197,13 @@ Adattagjai:
 
 Metódusai:
 \begin{itemize}
-\item \textit{gameFunction()}: ???
-\item \textit{gameOver()}: A játék végén hívódik meg, durván egy logikai destruktornak is tekinthető. Elvégzi a játék végén fontos teendőket; pl. frissíti a Lader-t, felszabadítja az erőforrásokat stb.
-\item \textit{loadGame()}: Betölt egy korábban elmentett játékállást. Létrehozza a szükséges objektumokat, beállítja az értéküket, a MapHandler-rel legeneráltatja a térképet stb.
-\item \textit{moveUnit()}: ???
 \item \textit{newGame()}: A játék elején hívódik meg, durván egy logikai konstruktornak is tekinthető. Létrehozza a játék elején szükséges objektumokat, beállítja a játékosok, egységek stb. alapértelmezett értékeit.
+\item \textit{loadGame()}: Betölt egy korábban elmentett játékállást. Létrehozza a szükséges objektumokat, beállítja az értéküket, a MapHandler-rel legeneráltatja a térképet stb.
 \item \textit{saveGame()}: Menti a jelenlegi játékállást úgy, hogy később betölthető legyen, ld. loadGame().
+\item \textit{gameOver()}: A játék végén hívódik meg, durván egy logikai destruktornak is tekinthető. Elvégzi a játék végén fontos teendőket; pl. frissíti a Lader-t, felszabadítja az erőforrásokat stb.
+\item \textit{endTurn()}: Minden kör végén hívódik meg. A teljesítmény alapján a játékosok pénzt kapnak, illetve az egységeik száma alapján zsoldot fizetnek.
+\item \textit{moveUnit()}: Az egységek mozgatásához használt metódus. A mozgással lehet falvat foglalni, az ellenséggel harcolni, vagy egyszerűen másik mezőre lépni. Ezek mindegyike másféleképp befolyásolja az egységek tulajdonságait.
+\item \textit{buyUnit()}: Egységek vásárlásakor hívott metódus. Létrehozza az új egységet, és lehelyezi a térkép speciális részére, a játékos kezdőterületére.
 \end{itemize}
 
 \subsection{ViewModel}

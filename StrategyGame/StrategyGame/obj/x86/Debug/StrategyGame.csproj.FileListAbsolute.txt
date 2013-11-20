@@ -24,3 +24,5 @@ C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\S
 C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.Properties.Resources.resources
 C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\Marci\Documents\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Dokumentumok\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.exe
+D:\Dokumentumok\GitHub\szfgy1\StrategyGame\StrategyGame\obj\x86\Debug\StrategyGame.pdb
