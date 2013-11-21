@@ -15,7 +15,7 @@ namespace StrategyGame.Model
     /// Unit can be of four types: ATTACKER/DEFENDER/SUPPORTER/SCOUT
     /// </summary>
     enum UnitType { ATTACKER, DEFENDER, SUPPORTER, SCOUT }
-    
+
     //TODO: Implement Unit methods and functions
     class Unit
     {
@@ -27,7 +27,7 @@ namespace StrategyGame.Model
         /// Type of the Unit: ATTACKER/DEFENDER/SUPPORTER/SCOUT
         /// </summary>
         private UnitType _Type;
-        
+
         /// <summary>
         /// Name of the unit. It varies on race and unit type
         /// </summary>
@@ -41,8 +41,14 @@ namespace StrategyGame.Model
         public Int32 MovingPoint { get; private set; }
         public Int32 HealingPoint { get; private set; }
         public Point Position { get; set; }
+        public Int32 Level { get; private set; }
 
-        public Unit(RaceType rt,UnitType ut)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="rt">The unit's race</param>
+        /// <param name="ut">The unit's type</param>
+        public Unit(RaceType rt, UnitType ut)
         {
             _Race = rt;
             _Type = ut;
@@ -195,6 +201,52 @@ namespace StrategyGame.Model
                     break;
             }
 
+        }
+
+        /// <summary>
+        /// Moves the unit to the given position with the given cost.
+        /// If the unit has less MovingPoints then the necessary, no moving is executed.
+        /// The function returns true if the movement is executed successfully, false otherwise.
+        /// </summary>
+        /// <param name="position">The new position on the map where the unit moves</param>
+        /// <param name="moveCost">The cost of the moving</param>
+        /// <returns>Whether the move was successful or not</returns>
+        public Boolean MoveUnit(Point position, Int32 moveCost)
+        {
+            if (moveCost > MovingPoint)
+                return false;
+
+            MovingPoint -= moveCost;
+            Position = position;
+            return true;
+        }
+
+        /// <summary>
+        /// Increases the HealthPoint value with the given amount of points.
+        /// Returns with the new HealthPoint value.
+        /// </summary>
+        /// <param name="healingPoint">Rate of the increase</param>
+        /// <returns>Value of the Health point after the increase</returns>
+        public Int32 HealUnit(Int32 healingPoint)
+        {
+            HealthPoint += healingPoint;
+            return HealthPoint;
+        }
+
+        /// <summary>
+        /// Increases the level of the unit, sets the properties to the appropriate values.
+        /// Return the new level of the unit.
+        /// </summary>
+        /// <returns>Level of the unit.</returns>
+        public Int32 LevelUp()
+        {
+            if (Level == 3)
+                return Level;
+            if (Level == 1)
+            {
+                //if (
+            }
+            return 0;
         }
     }
 }
