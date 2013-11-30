@@ -42,6 +42,7 @@ namespace StrategyGame.View
             ladder.BackToMainMenuButtonClickedEvent += new EventHandler(backToMainMenu);
 
             game = new GameUserControl(vm);
+            game.BackToMainMenuButtonClickedEvent += new EventHandler(backToMainMenu);
 
             mainControlArea.Content = mainMenu;
 
