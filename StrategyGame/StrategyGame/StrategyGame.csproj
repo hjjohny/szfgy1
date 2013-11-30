@@ -84,7 +84,9 @@
     <Compile Include="Model\LadderObject.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Model\Unit.cs" />
+    <Compile Include="ViewModel\FieldViewModel.cs" />
     <Compile Include="ViewModel\StrategyGameViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\GameStartOptionsControl.xaml.cs">
       <DependentUpon>GameStartOptionsControl.xaml</DependentUpon>
     </Compile>

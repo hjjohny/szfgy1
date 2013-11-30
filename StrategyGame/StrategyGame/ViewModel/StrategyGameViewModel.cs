@@ -13,19 +13,22 @@ namespace StrategyGame.ViewModel
 {
     
     //TODO: Implement ViewModel
-    public class StrategyGameViewModel
+    public class StrategyGameViewModel : ViewModelBase
     {
         private GameManager gm;
         public Player currentPlayer { get; set; }
 
         public ObservableCollection<LadderObject> ladder { get; protected set; }
 
-        public ObservableCollection<Field> map { get;set; }
+        public ObservableCollection<FieldViewModel> map { get;set; }
+        public Int32 mapSize;
+
 
         public StrategyGameViewModel() 
         {
             gm = new GameManager();
             ladder = gm.getLadder();
+            mapSize = 10;
             
             /*ladder = new ObservableCollection<LadderObject>();
             ladder.Add(new LadderObject("en",120)); */
@@ -44,6 +47,22 @@ namespace StrategyGame.ViewModel
         public void updateLadder()
         {
             ladder = gm.getLadder();
+        }
+
+        public void Load() 
+        {
+
+        }
+
+        public void Save()
+        {
+
+        }
+
+        public void EndTurn()
+        {
+            gm.endTurn();
+            //currentPlayer = gm.currentPlayer;
         }
         
     }

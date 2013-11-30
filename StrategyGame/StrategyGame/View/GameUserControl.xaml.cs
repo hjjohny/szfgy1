@@ -20,6 +20,7 @@ namespace StrategyGame.View
     /// </summary>
     public partial class GameUserControl : UserControl
     {
+        public event EventHandler BackToMainMenuButtonClickedEvent;
 
         private StrategyGameViewModel vm;
 
@@ -27,6 +28,38 @@ namespace StrategyGame.View
         {
             InitializeComponent();
             vm=vm_;
+            gameTable.DataContext = vm;
+            DataLine.DataContext = vm.currentPlayer;
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            switch(clickedButton.Content.ToString())
+            {
+                case "Exit": 
+                {
+                    BackToMainMenuButtonClickedEvent(sender, e);
+                    break;
+                }
+                case "Load":
+                {
+                    vm.Load();
+                    break;
+                }
+                case "Save":
+                {
+                    vm.Save();
+                    break;
+                }
+                case "End Turn":
+                {
+                    vm.EndTurn();
+                    break;
+                }
+            }
+        }
+
+
     }
 }
