@@ -9,12 +9,12 @@ namespace StrategyGame.Model
     /// <summary>
     /// Race can be of three types: ELF/HUMAN/ORC
     /// </summary>
-    enum RaceType { ELF, MAN, ORC }
+    public enum RaceType { ELF, MAN, ORC }
 
     /// <summary>
     /// Unit can be of four types: ATTACKER/DEFENDER/SUPPORTER/SCOUT
     /// </summary>
-    enum UnitType { ATTACKER, DEFENDER, SUPPORTER, SCOUT }
+    public enum UnitType { ATTACKER, DEFENDER, SUPPORTER, SCOUT }
 
     //TODO: Implement Unit methods and functions
     class Unit

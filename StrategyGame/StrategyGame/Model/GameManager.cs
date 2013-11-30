@@ -1,12 +1,15 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
 namespace StrategyGame.Model
 {
     //TODO: Implement GameManager Class
-    class GameManager
+    public class GameManager
     {
 		private Player _currentPlayer;
 		private MapHandler _mapHandler;
@@ -154,5 +157,10 @@ namespace StrategyGame.Model
 		{
 			//TODO Implement loadGame() method
 		}
+
+        public ObservableCollection<LadderObject> getLadder() 
+        {
+            return new ObservableCollection<LadderObject>();
+        }
     }
 }
