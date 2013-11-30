@@ -6,7 +6,7 @@ using System.Text;
 namespace StrategyGame.Model
 {
     //TODO: Implement Field Class
-    class Field
+    public class Field
     {
     }
 }

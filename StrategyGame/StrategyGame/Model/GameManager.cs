@@ -1,12 +1,16 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace StrategyGame.Model
 {
     //TODO: Implement GameManager Class
-    class GameManager
+    public class GameManager
     {
         public void buyUnit() {
             //TODO Implement buyUnit() method
@@ -45,6 +49,12 @@ namespace StrategyGame.Model
         public void saveGame()
         {
             //TODO Implement saveGame() method
+        }
+
+
+        public ObservableCollection<LadderObject> getLadder() 
+        {
+            return new ObservableCollection<LadderObject>();
         }
     }
 }
