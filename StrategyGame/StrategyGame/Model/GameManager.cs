@@ -117,6 +117,14 @@ namespace StrategyGame.Model
 			//TODO Implement isMoveLegal() method
 		}
 
+		private int calculateMoveCost(Position oldPos, Position newPos)
+		{
+			//Valami fasza útkereső algoritmus...
+			//TODO hogyan számoljuk a cost-ot?
+			//TODO Implement calculateMoveCost() method
+			return 3;
+		}
+
         public void moveUnit(Unit unit, Position newPos)
         {
 			//safety check
@@ -129,8 +137,7 @@ namespace StrategyGame.Model
 			if (!isMoveLegal(unit, newPos))
 				return;
 
-			//TODO hogyan számoljuk a cost-ot?
-			bool moveOk = unit.MoveUnit(newPos, 9999);
+			bool moveOk = unit.MoveUnit(newPos, calculateMoveCost(unit.Position, newPos));
 
 			if (!moveOk)
 				return;
