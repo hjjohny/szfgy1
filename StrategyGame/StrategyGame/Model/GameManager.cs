@@ -18,13 +18,13 @@ namespace StrategyGame.Model
 		private List<Unit> _newUnitsInTheCurrentTurn;
 		private Int32 _turn;
 
-		//TODO a játékosok hogy és hol keletkezzenek?
+		//TODO a játékosok hogy és hol keletkezzenek? // te csinálsz én csak a nevet és fajt adom át
 		/// <summary>
 		/// Creates new game.
 		/// </summary>
 		/// <param name="player1">Object of first player.</param>
 		/// <param name="player2">Object of second player.</param>
-		public void newGame(Player player1, Player player2)
+        public void newGame(Player player1, Player player2)//ez a jó: String p1Name_, int p1Race_, String p2Name_, int p2Race_
 		{
 			_mapHandler.generateMap();
 			_players[0] = player1;
@@ -82,16 +82,18 @@ namespace StrategyGame.Model
 			_mapHandler.destroyMap();
         }
 
-		private void updateLader(Player winner)
+		private void updateLadder(Player winner)
 		{
 			//TODO Implement updateLader() method
-			//TODO A ranglistát hol tároljuk?
+			//TODO A ranglistát hol tároljuk? fájlban
 		}
 
-        public void loadLader()
+        public ObservableCollection<LadderObject> loadLadder()
         {
+
+            return new ObservableCollection<LadderObject>();
 			//TODO Implement loadLader() method
-			//TODO A ranglistát hol tároljuk?
+			//TODO A ranglistát hol tároljuk? fájlban
         }
 	
 		/// <summary>
@@ -99,10 +101,10 @@ namespace StrategyGame.Model
 		/// </summary>
 		private void givePlayersMoney()
 		{
-			//TODO Hogyan számoljuk a teljesítményt?
+			//TODO Hogyan számoljuk a teljesítményt? találj ki valamit
 		}
 
-		//TODO Talán a Unitnak is számon kéne tartania?
+		//TODO Talán a Unitnak is számon kéne tartania? a unit tudja mennyit tud lépni, és azt is hogy mozoghat-e
 		/// <summary>
 		/// New units can't move in the turn they were created in...
 		/// </summary>
@@ -120,7 +122,7 @@ namespace StrategyGame.Model
 		private int calculateMoveCost(Position oldPos, Position newPos)
 		{
 			//Valami fasza útkereső algoritmus...
-			//TODO hogyan számoljuk a cost-ot?
+			//TODO hogyan számoljuk a cost-ot? találd ki
 			//TODO Implement calculateMoveCost() method
 			return 3;
 		}
@@ -165,9 +167,5 @@ namespace StrategyGame.Model
 			//TODO Implement loadGame() method
 		}
 
-        public ObservableCollection<LadderObject> getLadder() 
-        {
-            return new ObservableCollection<LadderObject>();
-        }
     }
 }
