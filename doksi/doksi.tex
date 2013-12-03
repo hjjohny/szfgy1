@@ -249,5 +249,50 @@ Metódusai:
 
 \section{Részletes programterv}
 
+\chapter{Implementáció}
+
+\section{Fejlesztő eszközök}
+
+Az implementácó a Microsoft Visual Studió 2010-val történik, a szoftvert komponens alapú módon fejlesztjük,
+hogy ne legyenek kódolási átfedések mindenkinek csak a saját komponensébe kell kódolnia, valamint a tesztelés és karbantartás/további fejlesztések könnyen menjenek.
+A kód vázát az Enterprise Architect program segítségével generáltattuk le az előzetes tervekből, melyeket később kiegészítünk vagy módosítunk ha szükséges. A programot a WPF technológia segítségével valósítjuk meg MVVM(Model-View-ViewModel) architektúrával.
+
+\section{Forráskód,futtatható kód}
+
+\subsection{Vew-ViewModel komponens}
+A view a következő fájlokból áll:
+\begin{itemize}
+\item App.xaml, App.xaml.cs: A fő program, ez az osztály vezárli a GUI szálakat és tölti be az ablakot.
+\item MainWindow.xaml, MainWindow.xaml.cs : A fő ablak kódja, ezen az ablakon cserálgetjük a különböző kontrolokat a megjelenítés  szerint.
+\item MainMenUserControl.caml, MainMenuUserControl.xaml.cs: A főmenü megjelenítése és eseményeinek kezelése.
+\item LadderUserControl.xaml, LadderUserControl.xaml.cs: A ranglétra megjelenítése.
+\item GameUserControl.xaml, GameUserControl.xaml.cs: A játék felület, amiben majd játszhatunk.
+\item GameStartOptionsuserControl.xaml,GameStartOptionsuserControl.xaml.cs: A játék előtti kezdeti beállítások, játékos neve faja.
+\item pic/menubackground.png : A menü valamint az játék előtti ablakok hátter.
+\end{itemize}
+
+A viewModel a következő fájlokból áll:
+\begin{itemize}
+\item ViewModelBase.cs: A ViewModel alap funkcióit szokás egy ősosztályba kiemelni. 
+\item StartegyGameViewModel.cs: A konkrét ViewModel, a base-ből származik itt vannak megvalósítva a program specifikus függvényei.
+\item test/ModelStab.cs: A view tesztelésére szolgáló stub osztály.
+\end{itemize}
+
+\section{Alkalmazott kódolási szabályok}
+
+Msdn microsoft C\# Conventions: http://msdn.microsoft.com/en-us/library/ff926074.aspx. Az osztályok nevei a funkciójuknak megfelelő előtaggal és a típusnak megfelelő utótaggal rendelkeznek.
+
+\chapter{Tesztelés}
+
+Mivel a szoftvert komponens alapon fejlesztettük ezért könnyű tesztelni. A tesztelés alapvetően fekete doboz módon történik, Mockolás segítségével. A komponensek a velük kapcsolatban álló osztályokat stubok és driverek segítségével helyettesítik, hogy a saját függvényeik működését és helyes meghívását ellenőrizzék.
+
+\section{View-ViewModel}
+
+A View-t természetéből kifolyóan nehéz tesztelni hagyományos fehér doboz módszerekkel, inkább a fekete doboz tesztelés a megszokott. A view-t megfelelő kattintás felvevő és lejátszó teszteszköz hiányában, csak kézzel teszteltük, minden gomb végigkattintásával. A View-Model kapcsolatot azonban már könyebb kezelni, a model helyettesíthető egy megfelelő stubbal, ami kírja hogy a megfelelő funkció meghívódott esetleg buta módon fix értékekkel tér visssza, így a közreműködés a két komponens között tesztelhető.
+
+\chapter{Felhasználói dokumentáció}
+
+
+
 
 \end{document} 
