@@ -8,8 +8,9 @@
     <Grid>
         <Grid Height="30" Margin="0,0,0,542" Background="DimGray" >
             <Button Content="Exit" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" Name="ExitB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
-            <Button Content="Save" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="225,0,0,0" Name="SaveB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
-            <Button Content="Load" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="445,0,0,0" Name="LoadB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+            <Button Content="Save" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="160,0,0,0" Name="SaveB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+            <Button Content="Load" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="320,0,0,0" Name="LoadB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+            <Button Content="Buy Unit" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="484,0,0,0" Name="BuyUnitB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
             <Button Content="End Turn" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="650,0,0,0" Name="EndB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
         </Grid>
         <Grid Height="38" Margin="0,0,0,472" Background="#FF706262" Name="DataLine">
@@ -20,33 +21,12 @@
             <TextBlock Height="42" HorizontalAlignment="Left" Margin="382,7,0,0" Name="GoldTB" Text="342" VerticalAlignment="Top" Width="98" FontSize="20" DataContext="money" />
             <TextBlock Height="42" HorizontalAlignment="Left" Margin="735,7,0,0" Name="IncomeTB" Text="12" VerticalAlignment="Top" Width="59" FontSize="20" DataContext="income" />
         </Grid>
-        <Grid>
-            <ItemsControl x:Name="gameTable" ItemsSource="{Binding map}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Button Content="{Binding Value}" Command="{Binding ChangeValueCommand}">
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border CornerRadius="10" Margin="2">
-                                        <Border.Style>
-                                            <Style TargetType="Border">
-                                                <Setter Property="BorderThickness" Value="1" />
-                                                <Setter Property="Background" Value="LightGray" />
-                                                <Setter Property="BorderBrush" Value="Black" />
-                                            </Style>
-                                        </Border.Style>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
-                        </Button>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Rows="{Binding mapSize}" Columns="{Binding mapSize}" />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>
+        <Grid Name="Table" Margin="0,89,0,12">
         </Grid>
+        <StatusBar Height="23" HorizontalAlignment="Left" Name="statusBar" VerticalAlignment="Bottom" Width="800" >
+            <StatusBarItem>
+                <TextBlock Name="statesBarText" />
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </UserControl>

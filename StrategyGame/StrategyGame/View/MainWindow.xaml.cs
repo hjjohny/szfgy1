@@ -20,10 +20,10 @@ namespace StrategyGame.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainMenuControl mainMenu;
-        private LaderUserControl ladder;
+        private MainMenuUserControl mainMenu;
+        private LadderUserControl ladder;
         private GameUserControl game;
-        private GameStartOptionsControl gameStartOptions;
+        private GameStartOptionsUserControl gameStartOptions;
 
         private StrategyGameViewModel vm;
 
@@ -32,13 +32,13 @@ namespace StrategyGame.View
             InitializeComponent();
             vm = new StrategyGameViewModel();
 
-            mainMenu= new MainMenuControl();
-            mainMenu.MainMenuButtonClickedEvent += new MainMenuControl.ButtonClickEventHandler(selectFromMainMenu);
+            mainMenu= new MainMenuUserControl();
+            mainMenu.MainMenuButtonClickedEvent += new MainMenuUserControl.ButtonClickEventHandler(selectFromMainMenu);
 
-            gameStartOptions = new GameStartOptionsControl(vm);
-            gameStartOptions.GameStartOptionsButtonClickedEvent += new GameStartOptionsControl.ButtonClickEventHandler(selectGameStartOption);
+            gameStartOptions = new GameStartOptionsUserControl(vm);
+            gameStartOptions.GameStartOptionsButtonClickedEvent += new GameStartOptionsUserControl.ButtonClickEventHandler(selectGameStartOption);
 
-            ladder = new LaderUserControl(vm);
+            ladder = new LadderUserControl(vm);
             ladder.BackToMainMenuButtonClickedEvent += new EventHandler(backToMainMenu);
 
             game = new GameUserControl(vm);
@@ -80,7 +80,7 @@ namespace StrategyGame.View
             {
                 case "Launch Game":
                 {
-                  vm.startNewGame();
+                  //vm.startNewGame();
                    mainControlArea.Content = game;
                    break;
                 }

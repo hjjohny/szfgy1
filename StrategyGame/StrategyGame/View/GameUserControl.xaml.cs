@@ -28,8 +28,34 @@ namespace StrategyGame.View
         {
             InitializeComponent();
             vm=vm_;
-            gameTable.DataContext = vm;
+            vm.gm.statusBarTextBlock = statesBarText;
+            //gameTable.DataContext = vm;
             DataLine.DataContext = vm.currentPlayer;
+            drawMap();
+            statesBarText.Text = "státsz";
+
+        }
+
+        private void drawMap() 
+        {
+            for (int i = 0; i < vm.mapSize; ++i)
+            {
+                Table.RowDefinitions.Add(new RowDefinition());
+                Table.ColumnDefinitions.Add(new ColumnDefinition());
+            }
+
+            for (int i = 0; i < vm.mapSize; ++i)
+            {
+                for (int j = 0; j < vm.mapSize; ++j)
+                {
+                    Button tmp = new Button();
+                    tmp.Content = "1";
+                    //tmp.MouseUp += new MouseButtonEventHandler(tmp_MouseUp);
+                    Grid.SetRow(tmp, i);
+                    Grid.SetColumn(tmp, j);
+                    Table.Children.Add(tmp);
+                }
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -55,6 +81,11 @@ namespace StrategyGame.View
                 case "End Turn":
                 {
                     vm.EndTurn();
+                    break;
+                }
+                case "Buy Unit": 
+                {
+                    vm.buyUnit();
                     break;
                 }
             }
