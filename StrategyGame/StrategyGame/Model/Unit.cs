@@ -33,12 +33,14 @@ namespace StrategyGame.Model
         /// </summary>
         public String Name { get; private set; }
         public Int32 HealthPoint { get; private set; }
+        private Int32 _MaxHealthPoint;
         public Int32 Damage { get; private set; }
         public Int32 Reach { get; private set; }
         public Double DefensePoint { get; private set; }
         public Int32 Price { get; private set; }
         public Int32 Cost { get; private set; }
         public Int32 MovingPoint { get; private set; }
+        //private Int32 _MaxMovingPoint;
         public Int32 HealingPoint { get; private set; }
         public Point Position { get; set; }
         public Int32 Level { get; private set; }
@@ -63,6 +65,7 @@ namespace StrategyGame.Model
                         Damage = 7;
                         Reach = 1;
                         HealthPoint = 30;
+                        _MaxHealthPoint = 30;
                         DefensePoint = 0.5;
                         Price = 18;
                         Cost = 1;
@@ -74,6 +77,7 @@ namespace StrategyGame.Model
                         Damage = 6;
                         Reach = 1;
                         HealthPoint = 27;
+                        _MaxHealthPoint = 27;
                         DefensePoint = 0.5;
                         Price = 15;
                         Cost = 1;
@@ -85,6 +89,7 @@ namespace StrategyGame.Model
                         Damage = 8;
                         Reach = 2;
                         HealthPoint = 38;
+                        _MaxHealthPoint = 38;
                         DefensePoint = 0.5;
                         Price = 18;
                         Cost = 1;
@@ -98,6 +103,7 @@ namespace StrategyGame.Model
                         Damage = 5;
                         Reach = 4;
                         HealthPoint = 20;
+                        _MaxHealthPoint = 20;
                         DefensePoint = 0.5;
                         Price = 16;
                         Cost = 1;
@@ -109,6 +115,7 @@ namespace StrategyGame.Model
                         Damage = 7;
                         Reach = 5;
                         HealthPoint = 18;
+                        _MaxHealthPoint = 18;
                         DefensePoint = 0.5;
                         Price = 15;
                         Cost = 1;
@@ -120,6 +127,7 @@ namespace StrategyGame.Model
                         Damage = 3;
                         Reach = 3;
                         HealthPoint = 25;
+                        _MaxHealthPoint = 18;
                         DefensePoint = 0.5;
                         Price = 16;
                         Cost = 1;
@@ -134,6 +142,7 @@ namespace StrategyGame.Model
                         HealingPoint = 5;
                         Reach = 0;
                         HealthPoint = 15;
+                        _MaxHealthPoint = 15;
                         DefensePoint = 0.5;
                         Price = 12;
                         Cost = 1;
@@ -146,6 +155,7 @@ namespace StrategyGame.Model
                         HealingPoint = 7;
                         Reach = 0;
                         HealthPoint = 15;
+                        _MaxHealthPoint = 15;
                         DefensePoint = 0.5;
                         Price = 20;
                         Cost = 2;
@@ -158,6 +168,7 @@ namespace StrategyGame.Model
                         HealingPoint = 4;
                         Reach = 0;
                         HealthPoint = 15;
+                        _MaxHealthPoint = 15;
                         DefensePoint = 0.5;
                         Price = 12;
                         Cost = 1;
@@ -171,6 +182,7 @@ namespace StrategyGame.Model
                         Damage = 5;
                         Reach = 2;
                         HealthPoint = 25;
+                        _MaxHealthPoint = 15;
                         DefensePoint = 0.4;
                         Price = 17;
                         Cost = 1;
@@ -182,6 +194,7 @@ namespace StrategyGame.Model
                         Damage = 4;
                         Reach = 3;
                         HealthPoint = 22;
+                        _MaxHealthPoint = 22;
                         DefensePoint = 0.4;
                         Price = 25;
                         Cost = 2;
@@ -193,6 +206,7 @@ namespace StrategyGame.Model
                         Damage = 7;
                         Reach = 1;
                         HealthPoint = 28;
+                        _MaxHealthPoint = 28;
                         DefensePoint = 0.4;
                         Price = 17;
                         Cost = 1;
@@ -229,7 +243,14 @@ namespace StrategyGame.Model
         /// <returns>Value of the Health point after the increase</returns>
         public Int32 HealUnit(Int32 healingPoint)
         {
-            HealthPoint += healingPoint;
+            if (HealthPoint + healingPoint <= _MaxHealthPoint)
+            {
+                HealthPoint += healingPoint;
+            }
+            else
+            {
+                HealthPoint = _MaxHealthPoint;
+            }
             return HealthPoint;
         }
 
@@ -240,13 +261,17 @@ namespace StrategyGame.Model
         /// <returns>Level of the unit.</returns>
         public Int32 LevelUp()
         {
-            if (Level == 3)
-                return Level;
             if (Level == 1)
             {
-                //if (
+                Level++;
+                return Level;
             }
-            return 0;
+            if (Level == 2)
+            {
+                Level++;
+                return Level;
+            }
+            return Level;
         }
     }
 }
