@@ -198,9 +198,9 @@ A konstruktor a fenti két paraméter segítségével hozza létre az egységeke
 
 A \textit{MoveUnit} metódus felelős az egység elmozdításáért. Paraméterül az új helyet és a mozgás költségét kapja. Ha a mozgás költsége nagyobb, mint a rendelkezésre álló mozgáspont, az egység helyben marad, egyébként elmozdul a megadott helyre. Visszatérési értéke igaz, ha a mozgás sikerült, egyébként hamis.
 
-A \textit{HealUnit} metódus "gyógyítja" az egységeket. Paraméterül egy egész számot kap, ennyivel kell növelni az egység életerejét.
+A \textit{HealUnit} metódus "gyógyítja" az egységeket. Paraméterül egy egész számot kap, ennyivel kell növelni az egység életerejét. Visszatérési értéke az egység életereje.
 
-A \textit{LevelUp} függvény felelős az egységek szintlépéséért. Meghívásakor az egység megfelelő tulajdonságai megnöveli.
+A \textit{LevelUp} függvény felelős az egységek szintlépéséért. Meghívásakor az egység megfelelő tulajdonságai megnöveli. Visszatérési értéke az egység új szintje.
 
 \subsubsection{Game}
 A Game osztályhoz fut be minden kérés, ő a Model lelke, ellenőrzi a kívánt műveletek (lépések stb.) érvényességét, frissíti a térképen lévő egységeket, mezőket, magát a térképet, amely változtatásokról a View értesül.
