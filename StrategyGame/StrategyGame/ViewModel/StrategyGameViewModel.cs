@@ -19,6 +19,7 @@ namespace StrategyGame.ViewModel
         private GameManager gm;
         //public ModelStab gm;//for testing
         public Player currentPlayer { get; set; }
+        public Int32 turn { get; set; }
 
         public ObservableCollection<LadderObject> ladder { get; set; }
 
@@ -32,6 +33,7 @@ namespace StrategyGame.ViewModel
             //gm = new ModelStab();//for testing
             ladder = gm.loadLadder();
             currentPlayer = gm.currentPlayer();
+            turn = gm._turn;
             
             mapSize = 0;
             
@@ -62,6 +64,7 @@ namespace StrategyGame.ViewModel
         {
             gm.endTurn();
             currentPlayer = gm.currentPlayer();
+            turn = gm._turn;
         }
 
         public void buyUnit()

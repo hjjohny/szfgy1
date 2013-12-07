@@ -47,7 +47,8 @@ namespace StrategyGame.View
         {
             CurrentPlayerTB.Text = vm.currentPlayer._name;
             GoldTB.Text=vm.currentPlayer._money.ToString();
-            IncomeTB.Text = vm.currentPlayer._income.ToString(); 
+            IncomeTB.Text = vm.currentPlayer._income.ToString();
+            TurnTB.Text = vm.turn.ToString();
         }
 
         private void drawMap() 

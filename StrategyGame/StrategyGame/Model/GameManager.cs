@@ -15,7 +15,7 @@ namespace StrategyGame.Model
 
 		private Int32 _currentPlayerIndex;
 		private Player[] _players;
-        private Int32 _turn;
+        public Int32 _turn {get;set;}
 
         private Random _randomGenerator;
 
@@ -29,6 +29,7 @@ namespace StrategyGame.Model
             _randomGenerator = new Random();
             _currentPlayerIndex = -1;
             _players = new Player[2];
+            _turn = 1;
         }
 
         public Player currentPlayer()
