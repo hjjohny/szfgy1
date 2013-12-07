@@ -27,10 +27,17 @@ namespace StrategyGame.Model
         public GameManager()
         {
             _randomGenerator = new Random();
+            _currentPlayerIndex = -1;
+            _players = new Player[2];
         }
 
         public Player currentPlayer()
         {
+            if (_currentPlayerIndex == -1)
+            {
+                return null;
+            }
+
             return _players[_currentPlayerIndex];
         }
 

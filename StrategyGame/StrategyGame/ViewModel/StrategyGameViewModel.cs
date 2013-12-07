@@ -16,8 +16,8 @@ namespace StrategyGame.ViewModel
     //TODO: Implement ViewModel
     public class StrategyGameViewModel: ViewModelBase
     {
-        //private GameManager gm;
-        public ModelStab gm;//for testing
+        private GameManager gm;
+        //public ModelStab gm;//for testing
         public Player currentPlayer { get; set; }
 
         public ObservableCollection<LadderObject> ladder { get; set; }
@@ -27,18 +27,20 @@ namespace StrategyGame.ViewModel
 
         public StrategyGameViewModel() 
         {
-            //gm = new GameManager();
+            gm = new GameManager();
 
-            gm = new ModelStab();//for testing
+            //gm = new ModelStab();//for testing
             ladder = gm.loadLadder();
+            currentPlayer = gm.currentPlayer();
             
-            mapSize = 10;
+            mapSize = 0;
             
         }
 
         public void newGame(String p1Name_, int p1Race_, String p2Name_, int p2Race_) 
         {
             gm.newGame(p1Name_,p1Race_,p2Name_,p2Race_);
+            currentPlayer=gm.currentPlayer();
         }
 
         public void updateLadder()
@@ -48,23 +50,24 @@ namespace StrategyGame.ViewModel
 
         public void Load() 
         {
-            gm.loadGame();
+            //gm.loadGame();
         }
 
         public void Save()
         {
-            gm.saveGame();
+            //gm.saveGame();
         }
 
         public void EndTurn()
         {
             gm.endTurn();
-            //currentPlayer = gm.currentPlayer;
+            currentPlayer = gm.currentPlayer();
         }
 
         public void buyUnit()
         {
-            gm.buyUnit();
+           // meg kell írni
+           // gm.buyUnit();
         }
         
     }

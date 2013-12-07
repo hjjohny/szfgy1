@@ -28,12 +28,26 @@ namespace StrategyGame.View
         {
             InitializeComponent();
             vm=vm_;
-            vm.gm.statusBarTextBlock = statesBarText;
+            //vm.gm.statusBarTextBlock = statesBarText;
             //gameTable.DataContext = vm;
-            DataLine.DataContext = vm.currentPlayer;
-            drawMap();
-            statesBarText.Text = "státsz";
 
+            drawMap();
+
+        }
+
+        protected override void OnRender(DrawingContext e)
+        {
+            base.OnRender(e);
+            refreshPlayerStatusLine();
+        }
+
+
+
+        private void refreshPlayerStatusLine() 
+        {
+            CurrentPlayerTB.Text = vm.currentPlayer._name;
+            GoldTB.Text=vm.currentPlayer._money.ToString();
+            IncomeTB.Text = vm.currentPlayer._income.ToString(); 
         }
 
         private void drawMap() 
@@ -81,6 +95,7 @@ namespace StrategyGame.View
                 case "End Turn":
                 {
                     vm.EndTurn();
+                    refreshPlayerStatusLine();
                     break;
                 }
                 case "Buy Unit": 
