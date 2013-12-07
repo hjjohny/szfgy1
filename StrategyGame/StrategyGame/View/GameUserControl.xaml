@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="StrategyGame.View.GameUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid Height="30" Margin="0,0,0,542" Background="DimGray" >
+            <Button Content="Exit" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="0,0,0,0" Name="ExitB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+            <Button Content="Save" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="160,0,0,0" Name="SaveB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+            <Button Content="Load" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="320,0,0,0" Name="LoadB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+            <Button Content="Buy Unit" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="484,0,0,0" Name="BuyUnitB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+            <Button Content="End Turn" Click="button_Click" Height="30" HorizontalAlignment="Left" Margin="650,0,0,0" Name="EndB" VerticalAlignment="Top" Width="150" FontSize="20" FontStyle="Italic" FontWeight="Bold" />
+        </Grid>
+        <Grid Height="38" Margin="0,0,0,472" Background="#FF706262" Name="DataLine">
+        <Label Content="CurrentPlayer:" Height="42" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" Width="140" FontSize="20" />
+        <Label Content="Gold:" Height="42" HorizontalAlignment="Right" Margin="0,2,354,0" Name="label2" VerticalAlignment="Top" Width="123" FontSize="20" />
+        <Label Content="Income:" Height="42" HorizontalAlignment="Left" Margin="653,2,0,0" Name="label3" VerticalAlignment="Top" Width="123" FontSize="20" />
+            <TextBlock Height="42" HorizontalAlignment="Left" Margin="132,5,0,0" Name="CurrentPlayerTB" Text="Current" VerticalAlignment="Top" Width="185" FontSize="20" DataContext="name" />
+            <TextBlock Height="42" HorizontalAlignment="Left" Margin="382,7,0,0" Name="GoldTB" Text="342" VerticalAlignment="Top" Width="98" FontSize="20" DataContext="money" />
+            <TextBlock Height="42" HorizontalAlignment="Left" Margin="735,7,0,0" Name="IncomeTB" Text="12" VerticalAlignment="Top" Width="59" FontSize="20" DataContext="income" />
+        </Grid>
+        <Grid Name="Table" Margin="0,89,0,12">
+        </Grid>
+        <StatusBar Height="23" HorizontalAlignment="Left" Name="statusBar" VerticalAlignment="Bottom" Width="800" >
+            <StatusBarItem>
+                <TextBlock Name="statesBarText" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</UserControl>
