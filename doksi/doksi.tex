@@ -292,7 +292,52 @@ A View-t természetéből kifolyóan nehéz tesztelni hagyományos fehér doboz 
 
 \chapter{Felhasználói dokumentáció}
 
+A Program nem igényel telepítést, csak fel kell másolni a kívánt helyre, ezutén futtatható amennyiben a rendszer követelmények megfelelnek.
 
+\section{Rendszer követelmények}
 
+A program csak windowst platformon futtatható, futtatásához szükséges a microsoft.net könyvtár ( minimum 4.0 ).
+A program ezen túl nem támaszt nagy rendszer igényeket. A futtatáshoz szükésges hardver megfelel a windows 7 minimális elvárásainak. A programot az alábbi rendszeren biztos, hogy lefut:
+\begin{itemize}
+\item {\bf CPU}: intel core2 duo
+\item {\bf Memória:} 1 Gb DDR2 Ram
+\item {\bf Videókártya:} Alaplapra vagy processzorba integrált kártya.
+\end{itemize} 
+
+\section{Futtatás\\használat}
+
+A programot a BattleOfHorde.exe segítségével indíthatjuk. Az indítás után a játék főmenüje fogad minekt, ahol választhatunk mit szeretnénk csinálni.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{mainmenu.png}
+\caption{Főmenü}
+\label{fig:fmmm}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{ladder.png}
+\caption{Legjobb játékosok}
+\label{fig:lj}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1\textwidth]{startoptions.png}
+\caption{Játék előtti beállítások}
+\label{fig:jeb}
+\end{figure}
+
+A {\bf Quit} gomb segítségével kiléphetünk a {\bf Start Game} gomb segítségével elindíthatunk egy meccset a {\bf Load Game}-el betölthetünk egy mentett játékállást és a {\bf Ladder}-t választva megnézhetjük az eddigi maximum 10 legjobb játékos nevét és pontszámát. A Start Game gomb lenyomása után egy meccs előtti beállitásokat tartlamazó képrnyó fogad minket ahol megválszthatjuk a nevünket és a fajunkat, ezután a {\bf Launch Game}-el indíthatjuk el a konkrét meccset. A játékmenet a következőképpen néz ki:
+
+A játék két ember közt zajlik körökre osztva. Ha az egyik végzett átadja a körét és a másik jön. Minden játékos 3 dolgot csinálhat a körében:
+\begin{itemize} 
+\item vásárolhat új egységet a pénzéből ami egy a map speciális részén az ő kezdő területén jelenik meg. Ez az egység még nem léphet mivel most jött
+csak a köv körbe lehet kezelni.
+\item mozgathatja az egységeit ezzel foglalva falvat, vagy csak mozogva. Ha valaki falvat foglal az egyég 2 mozgáspontot veszít, de mozodgat tovább ha tud,
+ha egy egység harcol, akkor az összes mozgáspontja 0-a lesz már nem mozoghat tovább.
+\item tovább adhatja a kört.
+\end{itemize}
+{\bf Cél}: elfpusztítani az összes ellenséges egységet.
 
 \end{document} 
