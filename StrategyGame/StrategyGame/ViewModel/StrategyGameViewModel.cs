@@ -20,6 +20,7 @@ namespace StrategyGame.ViewModel
         //public ModelStab gm;//for testing
         public Player currentPlayer { get; set; }
         public Int32 turn { get; set; }
+        public Boolean gameOver { get; set; }
 
         public ObservableCollection<LadderObject> ladder { get; set; }
 
@@ -43,6 +44,7 @@ namespace StrategyGame.ViewModel
         {
             gm.newGame(p1Name_,p1Race_,p2Name_,p2Race_);
             currentPlayer=gm.currentPlayer();
+            gameOver = gm._gameOver;
         }
 
         public void updateLadder()
@@ -67,10 +69,9 @@ namespace StrategyGame.ViewModel
             turn = gm._turn;
         }
 
-        public void buyUnit()
+        public void buyUnit(UnitType unitTipe_)
         {
-           // meg kell írni
-           // gm.buyUnit();
+           gm.buyUnit(unitTipe_);
         }
         
     }

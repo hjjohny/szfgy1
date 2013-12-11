@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using StrategyGame.ViewModel;
+using StrategyGame.Model;
 
 namespace StrategyGame.View
 {
@@ -101,7 +102,7 @@ namespace StrategyGame.View
                 }
                 case "Buy Unit": 
                 {
-                    vm.buyUnit();
+                    vm.buyUnit(UnitType.ATTACKER);
                     break;
                 }
             }

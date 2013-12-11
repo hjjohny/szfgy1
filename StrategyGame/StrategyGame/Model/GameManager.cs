@@ -16,6 +16,7 @@ namespace StrategyGame.Model
 		private Int32 _currentPlayerIndex;
 		private Player[] _players;
         public Int32 _turn {get;set;}
+        public Boolean _gameOver { get; set; }
 
         private Random _randomGenerator;
 
@@ -30,6 +31,7 @@ namespace StrategyGame.Model
             _currentPlayerIndex = -1;
             _players = new Player[2];
             _turn = 1;
+            _gameOver = false;
         }
 
         public Player currentPlayer()
@@ -48,6 +50,7 @@ namespace StrategyGame.Model
             _players[1] = new Player(p2Name_,(RaceType)p2Race_,START_MONEY,START_INCOME);
             _currentPlayerIndex = 0;
 			_turn = 1;
+            _gameOver = false;
 		}
 
         public void endTurn()
@@ -74,13 +77,15 @@ namespace StrategyGame.Model
 
 
             //ha megöli az egységet
+            Int32 nextPalyerIndex = (_currentPlayerIndex + 1) % _players.Length;
             if(defender_._currentHealPoint <= 0) 
             {
-                Int32 nextPalyerIndex = (_currentPlayerIndex + 1) % _players.Length;
                 _players[nextPalyerIndex]._units.Remove(defender_);
                 //mapról is leszedi, map.removeUnit(defender_);
                 _players[nextPalyerIndex]._income = calculateIncome(_players[nextPalyerIndex]);
             }
+
+            _gameOver=isEndGame(_players[nextPalyerIndex]);
 
             return true;
         }
@@ -155,6 +160,15 @@ namespace StrategyGame.Model
                 income -= unit._stats._resurveCost;
             }
             return income;
+        }
+
+        private Boolean isEndGame(Player defender_)
+        {
+            if (defender_._units.Count == 0) 
+            {
+                return true;
+            }
+            return false;
         }
 
         /* NINCS IDŐ!!!!!!!!!!!!!
